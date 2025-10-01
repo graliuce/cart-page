@@ -2,50 +2,30 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
-    <!-- Replace the content tag with appropriate information -->
-    <meta name="description" content="MRT: Meta Reinforcement Finetuning" />
-    <meta property="og:title" content="MRT: Meta Reinforcement Finetuning" />
-    <meta
-      property="og:description"
-      content="MRT: Meta Reinforcement Finetuning"
-    />
-    <meta property="og:url" content="https://cohenqu.github.io/mrt.github.io/" />
-    <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+    <meta name="description" content="Teaching LLMs When to Stop Seeking and Start Acting" />
+    <meta property="og:title" content="CaRT: Counterfactuals and Reasoning for Termination" />
+    <meta property="og:description" content="Teaching LLMs When to Stop Seeking and Start Acting" />
+    <meta property="og:url" content="URL_PLACEHOLDER" />
     <meta property="og:image" content="static/image/overview.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
 
-    <meta name="twitter:title" content="MRT: Meta Reinforcement Finetuning" />
-    <meta
-      name="twitter:description"
-      content="MRT: Meta Reinforcement Finetuning"
-    />
-    <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
-    <meta
-      name="twitter:image"
-      content="static/image/overview.png"
-    />
+    <meta name="twitter:title" content="CaRT: Counterfactuals and Reasoning for Termination" />
+    <meta name="twitter:description" content="Teaching LLMs When to Stop Seeking and Start Acting" />
+    <meta name="twitter:image" content="static/image/overview.png" />
     <meta name="twitter:card" content="static/image/overview.png" />
-    <!-- Keywords for your paper to be indexed by-->
-    <meta name="keywords" content="MRT: Meta Reinforcement Finetuning" />
+    <meta name="keywords" content="CaRT, LLMs, termination, information seeking, medical diagnosis, reasoning" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>MRT</title>
+    <title>CaRT</title>
     <link rel="icon" type="image/x-icon" href="static/images/icon.png" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet" />
 
     <link rel="stylesheet" href="static/css/bulma.min.css" />
     <link rel="stylesheet" href="static/css/bulma-carousel.min.css" />
     <link rel="stylesheet" href="static/css/bulma-slider.min.css" />
     <link rel="stylesheet" href="static/css/fontawesome.all.min.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css"
-    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" />
     <link rel="stylesheet" href="static/css/index.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
@@ -56,20 +36,26 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
-        prefix: 'tw-', // This makes all Tailwind classes start with 'tw-'
+        prefix: 'tw-',
       };
     </script>
   </head>
+  <body>
     <section class="hero">
       <div class="hero-body">
         <div class="container is-max-desktop">
           <div class="columns is-centered">
             <div class="column has-text-centered">
-              <h2 class="title is-2 publication-title ">
-                Optimizing Test-Time Compute via Meta Reinforcement Finetuning
+              <h2 class="title is-2 publication-title">
+                Teaching LLMs When to Stop Seeking and Start Acting
               </h2>
               <div class="is-size-5 publication-authors">
-                <!-- Paper authors -->
+                <span class="author-block">
+                  <a href="https://graliuce.github.io//" target="_blank"
+                    >Grace Liu<sup>*1</sup></a
+                  >
+                  ,
+                </span>
                 <span class="author-block">
                   <a href="https://cohenqu.github.io/" target="_blank"
                     >Yuxiao Qu<sup>*1</sup></a
@@ -77,32 +63,14 @@
                   ,
                 </span>
                 <span class="author-block">
-                  <a href="https://www.matthewyryang.com/" target="_blank"
-                    >Matthew Y. R. Yang<sup>*1</sup></a
+                  <a href="https://www.cs.cmu.edu/~schneide/" target="_blank"
+                    >Jeff Schneider<sup>1</sup></a
                   >
                   ,
                 </span>
                 <span class="author-block">
-                  <a href="https://scholar.google.com/citations?user=i7V1kJgAAAAJ&hl=en" target="_blank"
-                    >Amrith Setlur<sup>1</sup></a
-                  >
-                  ,
-                </span>
-                <span class="author-block">
-                  <a href="https://lewtun.github.io/blog/about/" target="_blank"
-                    >Lewis Tunstall<sup>2</sup></a
-                  >
-                  ,
-                </span>
-                <span class="author-block">
-                  <a href="https://edbeeching.github.io/" target="_blank"
-                    >Edward Emanuel Beeching<sup>2</sup></a
-                  >
-                  ,
-                </span>
-                <span class="author-block">
-                  <a href="https://www.cs.cmu.edu/~rsalakhu/" target="_blank"
-                    >Ruslan Salakhutdinov<sup>1</sup></a
+                  <a href="https://www.cs.cmu.edu/~aarti/" target="_blank"
+                    >Aarti Singh<sup>1</sup></a
                   >
                   ,
                 </span>
@@ -117,20 +85,14 @@
               <div class="is-size-5 publication-authors">
                 <span class="author-block">
                   <sup>1</sup>Carnegie Mellon University,
-                  <sup>2</sup>HuggingFace, 
                   <sup>*</sup>Equal Contribution
                 </span>
               </div>
 
               <div class="column has-text-centered">
                 <div class="publication-links">
-                  <!-- ArXiv abstract Link -->
                   <span class="link-block">
-                    <a
-                      href="http://arxiv.org/abs/2503.07572"
-                      target="_blank"
-                      class="external-link button is-normal is-rounded is-dark"
-                    >
+                    <a href="#" target="_blank" class="external-link button is-normal is-rounded is-dark">
                       <span class="icon">
                         <i class="ai ai-arxiv"></i>
                       </span>
@@ -138,26 +100,8 @@
                     </a>
                   </span>
 
-                  <!-- <span class="link-block">
-                    <a
-                      href="https://www.youtube.com/watch?v=Qv8aTLthfhs"
-                      target="_blank"
-                      class="external-link button is-normal is-rounded is-dark"
-                    >
-                      <span class="icon">
-                        <i class="fab fa-youtube"></i>
-                      </span>
-                      <span>Video</span>
-                    </a>
-                  </span> -->
-
-                  <!-- Github link -->
                   <span class="link-block">
-                    <a
-                      href="https://github.com/CMU-AIRe/MRT"
-                      target="_blank"
-                      class="external-link button is-normal is-rounded is-dark"
-                    >
+                    <a href="#" target="_blank" class="external-link button is-normal is-rounded is-dark">
                       <span class="icon">
                         <i class="fab fa-github"></i>
                       </span>
@@ -172,36 +116,23 @@
       </div>
     </section>
 
-    <!-- Teaser video-->
-<section class="hero teaser">
-  <!-- <div class="container is-max-desktop">
-    <div class="hero-body">
-      <div class="has-text-centered">
-        <div class="text-center">
-          <img src="static/images/teaser.png" alt="Meta Reinforcement Finetuning" class="mx-auto"/>
+    <!-- Teaser -->
+    <section class="hero teaser">
+      <div class="container is-max-desktop">
+        <div class="hero-body">
+            <div class="has-text-centered">
+              <div class="text-center" style="display: flex; justify-content: center;">
+                <img src="static/images/cart_teaser.png" alt="CaRT Termination Behavior" class="mx-auto" style="width: 80%;"/>
+              </div>
+            </div>
+          <p class="tw-text-left tw-text-sm tw-text-gray-500 tw-mt-3">
+            <b>A schematic illustration of termination behavior with and without CaRT.</b> While LLMs typically fail to recognize the best points to stop thinking or questioning, our approach CaRT teaches them to correctly identify when they have gathered sufficient information to solve a task, avoiding wasted computation on easy problems and making steady progress on hard problems.
+          </p>    
         </div>
       </div>
-      <h2 class="subtitle">
-        <b>Meta Reinforcement Finetuning (MRT)</b> introduces a novel paradigm that treats the problem-solving process as a series of correlated episodes with dense information gain rewards. While traditional reinforcement learning methods focus solely on optimizing the final outcome reward. MRT dynamically assigns varying rewards to intermediate episodes based on their information contribution, teaching the model to efficiently optimize its compute resources and minimize cumulative regret across multiple solution attempts. This meta-learning approach enables LLMs to develop more sophisticated problem-solving strategies beyond what was used for training.
-      </h2>
-    </div>
-  </div> -->
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <div class="has-text-centered">
-        <div class="text-center">
-          <img src="static/images/teaser.png" alt="Meta Reinforcement Finetuning" class="mx-auto"/>
-        </div>
-      </div>
-      <p class="tw-text-left tw-text-sm tw-text-gray-500 tw-mt-4">
-      <b>Standard outcome-reward reinforcement fine-tuning vs. our meta reinforcement fine-tuning (MRT).</b> Standard techniques for fine-tuning LLMs to use test-time compute optimize outcome reward at the end of a long trace but this does not incentivize the model to make use of intermediate tokens to make progress (<i>i.e.</i>, probability of eventual success) which leads to <b>1)</b> very long output traces, <b>2)</b> inhibits learning of a way that can make steady progress on new, hard problems as shown in <b>(a)</b>. <b><i>MRT</i></b> <b>(b)</b> trains the LLM to optimize for cumulative regret with respect to the oracle, over the entire thinking trace (shaded area) by optimizing a dense reward function in addition to sparse 0/1 reward and thus alleviates both challenges in <b>(a)</b>.
-      </p>    
-    </div>
-  </div>
-</section>
-    <!-- End teaser video -->
+    </section>
 
-    <!-- Paper abstract -->
+    <!-- Abstract -->
     <section class="section hero is-light">
       <div class="container is-max-desktop">
         <div class="columns is-centered has-text-centered">
@@ -209,492 +140,308 @@
             <h2 class="title is-3">Abstract</h2>
             <div class="content has-text-justified">
               <p>
-                Training models to effectively use test-time compute is crucial for improving the reasoning performance of LLMs. Current methods mostly do so via fine-tuning on search traces or running RL with 0/1 outcome reward, but do these approaches efficiently utilize test-time compute? Would these approaches continue to scale as the budget improves? In this paper, we try to answer these questions. We formalize the problem of optimizing test-time compute as a meta-reinforcement learning (RL) problem, which provides a principled perspective on spending test-time compute. This perspective enables us to view the long output stream from the LLM as consisting of several episodes run at test time and leads us to use a notion of <b>cumulative regret</b> over output tokens as a way to measure the efficacy of test-time compute. Akin to how RL algorithms can best tradeoff exploration and exploitation over training, minimizing cumulative regret would also provide the best balance between exploration and exploitation in the token stream. While we show that state-of-the-art models do not minimize regret, one can do so by maximizing a <b>dense</b> reward bonus in conjunction with the outcome 0/1 reward RL. This bonus is the "progress" made by each subsequent block in the output stream, quantified by the change in the likelihood of eventual success. Using these insights, we develop <b>M</b>eta <b>R</b>einforcment Fine-<b>T</b>uning, or <b>MRT</b>, a new class of fine-tuning methods for optimizing test-time compute. <b>MRT</b> leads to a 2-3x relative gain in performance and roughly a 1.5x gain in token efficiency for math reasoning compared to outcome-reward RL.
+                Many tasks require machine learning models to strategically gather relevant information over multiple rounds of interaction before actually acting on a task. Strategic information gathering requires models to know not only how to effectively acquire information, but also when to stop gathering information and make a decision, in order to avoid overthinking or getting derailed when acting. In this paper, we formalize this problem and introduce <b>Counterfactuals and Reasoning for Termination (CaRT)</b>, an approach for teaching LLMs when to stop seeking information. To appropriately learn when to terminate, CaRT fine-tunes LLMs using counterfactual pairs of trajectories, one where termination is appropriate and a minimally modified version of the same trajectory where it is not. It trains the LLM to explain the rationale for the termination decision in either case via verbal reasoning, and imbues this capability into the base LLM via fine-tuning. We instantiate CaRT in two domains: interactive medical diagnosis and math problem solving. In both domains, we find that CaRT improves the efficiency of information gathering and task success rate compared to other fine-tuning methods.
               </p>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <!-- End paper abstract -->
-    <section class="section" , id="What Do We Want at Test Time">
+
+    <!-- Problem Motivation -->
+    <section class="section" id="motivation">
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column is-full-width">
-            <h2 class="title is-3" id="setup">What Do We Want at Test Time </h2>
+            <h2 class="title is-3">The Termination Problem</h2>
 
             <div class="tw-flex tw-flex-wrap tw-justify-center tw-gap-4">
               <div class="tw-p-6 tw-shadow-lg tw-rounded-2xl tw-max-w-3xl tw-flex-1 tw-min-w-[300px]">
-                  <h2 class="tw-text-xl tw-font-semibold tw-text-gray-700 tw-mb-4">Easy Problem</h2>
-                  <div class="tw-space-y-4">
-                      <div class="tw-flex tw-items-start">
-                          <div class="tw-bg-blue-100 tw-p-3 tw-rounded-lg tw-max-w-xs">
-                              <p class="tw-text-gray-700">2+2=?</p>
-                          </div>
-                      </div>
-                      <div class="tw-flex tw-items-start tw-justify-end">
-                          <div class="tw-bg-green-100 tw-p-3 tw-rounded-lg tw-max-w-xl">
-                              <p class="tw-text-gray-700">
-                                  <p>&lt;think&gt;</p>
-                                  <p>Okay, so I need to figure out what 2 plus 2 equals.</p>
-                                  <p>Let me count them out. One, two, and then three, four...</p>
-                                  <p>&lt;/think&gt;</p>
-                                  <p><b>Step-by-Step Explanation:</b></p>
-                                  <ol>
-                                      <li>- Start with the numbers: 2 and 2.</li>
-                                      <li>- Combine their quantities: Add the two numbers together.</li>
-                                      <li>- Result: 2 + 2 = 4.</li>
-                                  </ol>
-                                  <p><b>Answer: 4</b></p>
-                              </p>
-                          </div>
-                      </div>
+                <h2 class="tw-text-xl tw-font-semibold tw-text-gray-700 tw-mb-4">Medical Diagnosis</h2>
+                <div class="tw-space-y-4">
+                  <div class="tw-flex tw-items-start">
+                    <div class="tw-bg-blue-100 tw-p-3 tw-rounded-lg tw-max-w-xs">
+                      <p class="tw-text-gray-700">Hi! What symptoms are you facing today?</p>
+                    </div>
                   </div>
-              </div>
-              <div class="tw-p-6 tw-shadow-lg tw-rounded-2xl tw-max-w-3xl tw-flex-1 tw-min-w-[300px]">
-                  <div class="tw-space-y-4">
-                      <h2 class="tw-text-xl tw-font-semibold tw-text-gray-700 tw-mb-4">Hard Problem</h2>
-                      <div class="tw-flex tw-items-start">
-                          <div class="tw-bg-blue-100 tw-p-3 tw-rounded-lg tw-max-w-xs">
-                              <p class="tw-text-gray-700">
-                                  <p>Show that the inequality</p>
-                                  <img src="https://latex.codecogs.com/svg.latex?\sum_{i=1}^n\sum_{j=1}^n\sqrt{\left|x_i-x_j\right|}\leq\sum_{i=1}^n\sum_{j=1}^n\sqrt{\left|x_i+x_j\right|}" title="\sum_{i=1}^n\sum_{j=1}^n\sqrt{\left|x_i-x_j\right|}\leq\sum_{i=1}^n\sum_{j=1}^n\sqrt{\left|x_i+x_j\right|}"/>
-                                  <p>holds for all real numbers </p>
-                              </p>
-                          </div>
-                      </div>
-                      <div class="tw-flex tw-items-start tw-justify-end">
-                          <div class="tw-bg-green-100 tw-p-3 tw-rounded-lg tw-max-w-xl">
-                              <p class="tw-text-gray-700">
-                                  <p>&lt;think&gt;</p>
-                                  <p>Okay, so I need to show that for any real numbers ...</p>
-                                  <p>Alternatively, <b>perhaps there's a way to pair terms or use symmetry?</b></p>
-                                  <p>Alternatively, <b>could we relate this inequality to some function property?</b></p>
-                                  <p>...</p>
-                                  <p>Time is up</p>
-                                  <p>&lt;/think&gt;</p>
-                                  <p><b>Step-by-Step Explanation:</b></p>
-                                  <ol>
-                                      <li>...</li>
-                                  </ol>
-                              </p>
-                          </div>
-                      </div>
+                  <div class="tw-flex tw-items-start tw-justify-end">
+                    <div class="tw-bg-green-100 tw-p-3 tw-rounded-lg tw-max-w-xl">
+                      <p class="tw-text-gray-700">Chest pain, trouble breathing, nausea, tingling in my arms.</p>
+                    </div>
                   </div>
+                  <div class="tw-flex tw-items-start">
+                    <div class="tw-bg-blue-100 tw-p-3 tw-rounded-lg tw-max-w-xs">
+                      <p class="tw-text-gray-700">What is your age and sex?</p>
+                    </div>
+                  </div>
+                  <div class="tw-flex tw-items-start tw-justify-end">
+                    <div class="tw-bg-green-100 tw-p-3 tw-rounded-lg tw-max-w-xl">
+                      <p class="tw-text-gray-700">I am a 25-year-old woman.</p>
+                    </div>
+                  </div>
+                  <div class="tw-flex tw-items-start">
+                    <div class="tw-bg-blue-100 tw-p-3 tw-rounded-lg tw-max-w-xs">
+                      <p class="tw-text-gray-700">Have you recently been under stress or experienced anxiety?</p>
+                    </div>
+                  </div>
+                  <div class="tw-flex tw-items-start tw-justify-end">
+                    <div class="tw-bg-green-100 tw-p-3 tw-rounded-lg tw-max-w-xl">
+                      <p class="tw-text-gray-700">I have been feeling very scared and panicked</p>
+                    </div>
+                  </div>
+                  <div class="tw-bg-yellow-100 tw-p-3 tw-rounded-lg">
+                    <p class="tw-text-gray-700 tw-text-sm">Final Diagnosis: Panic Attack</p>
+                  </div>
+                </div>
               </div>
-          </div>
+            </div>
 
-            <p class="tw-text-center tw-text-sm tw-text-gray-500 tw-mt-4">
-                Generated by <a href="https://huggingface.co/deepseek-ai/DeepSeek-R1" class="text-blue-500 underline">DeepSeek-R1</a>
+            <p class="tw-text-left tw-text-sm tw-text-gray-500 tw-mt-3">
+              <b>Simplified example of terminating information gathering in the medical diagnosis domain.</b>
             </p>
-            </br>
 
-            <div class="content has-text-justified tw-bg-blue-100 p-3 rounded-lg text-center mb-4">
-                <p><b>Desideratum 1: Don’t spend too many tokens on easy questions!</b></p>
-            </div>
-            <div class="content has-text-justified">
-                <p>On easy problems, we expect the model to quickly arrive at the correct answer without spending too many tokens. However, recent models, i.e., DeepSeek-R1, when asked a simple question like '2+2=?', eventually arrive at the correct answer, but not before going through an unnecessarily complex process. They first perform a direct calculation, then (as highlighted in gray) criticize themselves and re-evaluate the problem from multiple angles.
-              </p>
-            </div>
-            
-            <div class="content has-text-justified tw-bg-blue-100 p-3 rounded-lg text-center mb-4">
-                <p><b>Desideratum 2: Keep making progress on hard questions!</b></p>
-            </div>
-            
-            <div class="content has-text-justified">
-                <p>On hard problems, even though the given token budget is not sufficient to solve the problem, we expect the model to make progress towards the correct answer. However, recent models, i.e., DeepSeek-R1, when asked a hard question like the inequality above, frequently change their logical direction, using phrases like <it>'Wait'</it>, <it>'Alternatively'</it>, and <it>'Let's try something else'</it>. At one point, they even express frustration - much like a human would. While this mirrors how humans sometimes tackle difficult problems by changing approaches when stuck, there's a crucial difference - humans typically learn from their previous attempts and build upon that knowledge to make progress. The example shown above, however, tends to start fresh each time with seemingly random strategies, rather than leveraging insights from its earlier attempts.
+            <div class="content has-text-justified tw-mt-6">
+              <p>
+                Deciding when to stop gathering information is challenging because it requires predicting the expected future utility of continuing under the model's current policy. 
+                We build an approach to imbue LLMs with the ability to stop or ``terminate'' their internal thinking processes and/or environment interaction at the right point for maximal performance, 
+                without wasting computation or interaction. 
               </p>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <section class="section" , id="Do Current Models Meet Our Desiderata? A Case Study of DeepSeek-R1">
+
+    <!-- Method -->
+    <section class="section" id="method">
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column is-full-width">
-            <h2 class="title is-3" id="setup">Do Current Models Meet Our Desiderata? A Case Study of DeepSeek-R1</h2>
-              <!-- <h3 class="title is-4">Experiment Setup</h3> -->
-              <div class="content has-text-justified">
-                <p>In this study, we wanted to understand how effectively state-of-the-art AI models use their "thinking time" when solving complex problems. We designed an experiment with three distinct approaches to compare:</p>
-                <div style="display: flex; justify-content: center; gap: 20px; align-items: center;"><img
-                  src="static/images/r1_analysis_exp_setup.png"
-                  alt="R1 Experiment Setup"
-                  width="40%"
-                />
-                <img
-                  src="static/images/r1_analysis_results.png"
-                  alt="R1 Analysis Results"
-                  width="40%"
-                />
+            <h2 class="title is-3">CaRT: Counterfactuals and Reasoning for Termination</h2>
+            
+            <div class="content has-text-justified">
+              <p>
+                Our approach combines two key components to teach LLMs effective termination behavior:
+              </p>
+            </div>
+
+            <h3 class="title is-4">Component 1: Hard Negative Counterfactuals</h3>
+            <div class="content has-text-justified">
+              <p>
+                For each trajectory where termination is optimal (success rate ≥ 50%), we create a minimally modified counterfactual where termination would be inappropriate (success rate < 30%). This isolates the exact piece of information that differentiates success from failure.
+              </p>
+              <div class="tw-flex tw-flex-wrap tw-justify-center tw-gap-4 tw-mt-6">
+                <!-- Original Version -->
+                <div class="tw-p-6 tw-bg-green-50 tw-shadow-lg tw-rounded-2xl tw-flex-1 tw-min-w-[300px] tw-max-w-md">
+                  <h3 class="tw-text-lg tw-font-semibold tw-text-green-700 tw-mb-4 tw-text-center">Original (Should Terminate)</h3>
+                  <div class="tw-space-y-3">
+                    <div class="tw-flex tw-items-start">
+                      <div class="tw-bg-blue-100 tw-p-2 tw-rounded-lg tw-max-w-xs">
+                        <p class="tw-text-gray-700 tw-text-sm">Hi! What symptoms are you facing?</p>
+                      </div>
+                    </div>
+                    <div class="tw-flex tw-items-start tw-justify-end">
+                      <div class="tw-bg-green-100 tw-p-2 tw-rounded-lg tw-max-w-xs">
+                        <p class="tw-text-gray-700 tw-text-sm">Chest pain, trouble breathing, nausea, tingling.</p>
+                      </div>
+                    </div>
+                    <div class="tw-flex tw-items-start">
+                      <div class="tw-bg-blue-100 tw-p-2 tw-rounded-lg tw-max-w-xs">
+                        <p class="tw-text-gray-700 tw-text-sm">What is your age and sex?</p>
+                      </div>
+                    </div>
+                    <div class="tw-flex tw-items-start tw-justify-end">
+                      <div class="tw-bg-green-100 tw-p-2 tw-rounded-lg tw-max-w-xs">
+                        <p class="tw-text-gray-700 tw-text-sm">I am a 25-year-old woman.</p>
+                      </div>
+                    </div>
+                    <div class="tw-flex tw-items-start">
+                      <div class="tw-bg-blue-100 tw-p-2 tw-rounded-lg tw-max-w-xs">
+                        <p class="tw-text-gray-700 tw-text-sm tw-font-semibold">Have you been under stress or anxiety?</p>
+                      </div>
+                    </div>
+                    <div class="tw-flex tw-items-start tw-justify-end">
+                      <div class="tw-bg-green-100 tw-p-2 tw-rounded-lg tw-max-w-xs">
+                        <p class="tw-text-gray-700 tw-text-sm tw-font-semibold">I've been feeling very scared and panicked.</p>
+                      </div>
+                    </div>
+                    <div class="tw-bg-green-200 tw-p-2 tw-rounded-lg tw-mt-3">
+                      <p class="tw-text-gray-800 tw-text-xs tw-font-semibold tw-text-center">Decision: Terminate, Diagnosis: Panic Attack</p>
+                    </div>
+                  </div>
                 </div>
-                <div class="content has-text-justified">
-                  <ol class="content has-text-justified p-3 rounded-lg text-center mb-4">
-                    <li style="background-color: #99ddff; padding: 10px; text-align: left; border: 0px">
-                      <b>Full Reasoning Process</b>-We used DeepSeek-R1-Distill-Qwen-32B, a model specifically trained to solve problems by working through multiple episodes of reasoning before giving an answer.
-                    </li>
-                    <li style="background-color: #fdae62; padding: 10px; text-align: left; border: 0px">
-                      <b>Direct Response Baseline</b>-We compared this against Qwen2.5-32B-Instruct, a different model based on the same architecture but trained to produce "best guess" responses directly without showing extensive reasoning.
-                    </li>
-                    <li style="background-color: #b4e6a2; padding: 10px; text-align: left; border: 0px">
-                      <b>Majority Voting on Partial Reasoning</b> - We also tested the DeepSeek-R1 model with a hybrid approach: we cut off its reasoning process at different points and had it produce multiple answer attempts based on partial reasoning, then took a majority vote of these answers.
-                    </li>
-                  </ol>
-                  <p>We tested these approaches on challenging mathematics problems from AIME 2024 and the OmniMATH dataset, measuring performance at different reasoning depths to see which method produced the best results.</p>
+
+                <!-- Counterfactual Version -->
+                <div class="tw-p-6 tw-bg-red-50 tw-shadow-lg tw-rounded-2xl tw-flex-1 tw-min-w-[300px] tw-max-w-md">
+                  <h3 class="tw-text-lg tw-font-semibold tw-text-red-700 tw-mb-4 tw-text-center">Counterfactual (Should NOT Terminate)</h3>
+                  <div class="tw-space-y-3">
+                    <div class="tw-flex tw-items-start">
+                      <div class="tw-bg-blue-100 tw-p-2 tw-rounded-lg tw-max-w-xs">
+                        <p class="tw-text-gray-700 tw-text-sm">Hi! What symptoms are you facing?</p>
+                      </div>
+                    </div>
+                    <div class="tw-flex tw-items-start tw-justify-end">
+                      <div class="tw-bg-green-100 tw-p-2 tw-rounded-lg tw-max-w-xs">
+                        <p class="tw-text-gray-700 tw-text-sm">Chest pain, trouble breathing, nausea, tingling.</p>
+                      </div>
+                    </div>
+                    <div class="tw-flex tw-items-start">
+                      <div class="tw-bg-blue-100 tw-p-2 tw-rounded-lg tw-max-w-xs">
+                        <p class="tw-text-gray-700 tw-text-sm">What is your age and sex?</p>
+                      </div>
+                    </div>
+                    <div class="tw-flex tw-items-start tw-justify-end">
+                      <div class="tw-bg-green-100 tw-p-2 tw-rounded-lg tw-max-w-xs">
+                        <p class="tw-text-gray-700 tw-text-sm">I am a 25-year-old woman.</p>
+                      </div>
+                    </div>
+                    <div class="tw-flex tw-items-start">
+                      <div class="tw-bg-blue-100 tw-p-2 tw-rounded-lg tw-max-w-xs tw-opacity-50">
+                        <p class="tw-text-gray-700 tw-text-sm tw-italic">Do you have any family history of respiratory disease?</p>
+                      </div>
+                    </div>
+                    <div class="tw-flex tw-items-start tw-justify-end">
+                      <div class="tw-bg-green-100 tw-p-2 tw-rounded-lg tw-max-w-xs tw-opacity-50">
+                        <p class="tw-text-gray-700 tw-text-sm tw-italic">No, I don't have any family history of respiratory disease.</p>
+                      </div>
+                    </div>
+                    <div class="tw-bg-red-200 tw-p-2 tw-rounded-lg tw-mt-3">
+                      <p class="tw-text-gray-800 tw-text-xs tw-font-semibold tw-text-center">Decision: Continue</p>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <!-- <h3 class="title is-4">Key Findings</h3> -->
-                <div class="content has-text-justified tw-bg-orange-100 p-3 rounded-lg text-center mb-4">
-                  <b>Key Findings</b>
-                  <ul>
-                    <li>
-                      Additional reasoning in models trained with outcome reward RL do not consistently yield a performance improvement, particularly for complex problems that require many episodes.
-                    </li>
-                    <li>
-                      Even when better performance can be achieved by implementing "naive" strategies such as majority voting on fewer episodes, a long sequential chain of thought is unable to implement those.
-                    </li>
-                  </ul>
-                <!-- <p><b>Finding 1:</b> Additional reasoning in models trained with outcome reward RL do not consistently yield a performance improvement, particularly for complex problems that require many episodes.</p>
-                </div>
-                <div class="content has-text-justified tw-bg-orange-100 p-3 rounded-lg text-center mb-4">
-                <p><b>Finding 2:</b> Even when better performance can be achieved by implementing "naive" strategies such as majority voting on fewer episodes, a long sequential chain of thought is unable to implement those.</p> -->
-                </div> 
+              <p class="tw-text-sm tw-text-gray-500 tw-mt-4">
+                <b>Simplified counterfactual pair example.</b> The original trajectory (left) contains sufficient information to provide a diagnosis. The counterfactual (right, modified Q&A in gray) replaces this with a question that did not acquire the information needed to provide a diagnosis, making termination inappropriate.
+              </p>
+            </div>
+
+            <h3 class="title is-4">Component 2: Verbal Reasoning</h3>
+            <div class="content has-text-justified">
+              <p>
+                We augment each training example with explicit reasoning traces that explain why the current state warrants the termination decision. This reasoning serves as an implicit value function, helping the model predict whether to terminate or continue by reasoning about the implications before acting.
+              </p>
+              <div class="content has-text-justified tw-bg-blue-100 p-3 rounded-lg text-center mb-4">
+                <p><b>Example Reasoning Trace</b></p>
+                <p class="tw-text-left">&lt;think&gt; Based on the conversation so far, we have established that the patient is a 25-year-old woman experiencing chest pain, difficulty breathing, and feelings of panic. These symptoms, combined with the absence of cardiac risk factors and presence of acute anxiety, strongly suggest a panic attack rather than a cardiac event. We have sufficient information to make a confident diagnosis. &lt;/think&gt;</p>
+                <p class="tw-text-left"><b>Decision: Terminate</b></p>
+              </div>
+            </div>
+
+            <h3 class="title is-4">Training Objective</h3>
+            <div class="content has-text-justified">
+              <p>
+                We perform supervised fine-tuning (SFT) on counterfactual pairs with reasoning traces. This effectively optimizes for a policy that maximizes task reward while minimizing the number of information-seeking turns.
+              </p>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <section class="section" , id="Problem Formulation: Optimizing Test-Time Compute as Meta RL">
+
+    <!-- Results -->
+    <section class="section" id="results">
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column is-full-width">
-            <h2 class="title is-3" id="setup">Problem Formulation: Optimizing Test-Time Compute as Meta RL</h2>
-            <h3 class="title is-4">Our Meta-RL Perspective</h3>
+            <h2 class="title is-3">Results</h2>
+
+            <h3 class="title is-4">Medical Diagnosis</h3>
             <div class="content has-text-justified">
-                <p>
-                  We've reformulated the optimization of test-time compute through the lens of meta-reinforcement learning. By viewing an LLM's output as a sequence of meaningful episodes (attempts, verifications, etc.), we can optimize how the model uses test-time compute in a <b>budget-agnostic</b> way.
-                </p>
-                <div class="content has-text-justified tw-bg-blue-100 p-3 rounded-lg text-center mb-4">
-                  <p><b>Budget-Agnostic</b></p>
-                  <p>The model learns to be effective regardless of the specific token budget it's given at deployment time. Rather than being optimized for a single fixed token limit, our approach enables LLMs to adapt their reasoning strategy based on available compute, making steady progress with each episode. This flexibility allows the same model to perform well across different compute constraints without needing separate training for each potential budget.</p>
-                </div>
-                <p>We propose to use <b>cumulative regret</b> to measure how effectively a model makes progress toward solving problems</p>
-                <div class="content has-text-justified tw-bg-blue-100 p-3 rounded-lg text-center mb-4">
-                  <p><b>Cumulative Regret: Our Key Metric</b></p>
-                  <p>Given k episodes z generated from π(·|x), another LLM μ that computes an estimate of the correct response given episodes so far, and the optimal comparator policy given a j-episode budget as π<sup>*</sup><sub>j</sub>, we define cumulative regret parameterized by μ as:</p>
-                  <div class="columns is-centered"><img src="https://latex.codecogs.com/svg.latex?\Delta^\mu_k(\mathbf{x};\pi)=\mathbb{E}_{\mathbf{z}\sim\pi(\cdot|\mathbf{x})}\left[\sum_{j=0}^{k-1}J_r(\mathbf{x};\pi^*_j)-J_r(\mu(\cdot|\mathbf{x},\mathbf{z}_{0:j}))\right]" alt="Cumulative Regret Formula" /></div>
-                  <p>Here J<sub>r</sub> denotes the expected 0/1 outcome reward attained by LLM μ when conditioning on prior episodes z<sub>0:j-1</sub> produced by π, and J<sub>r</sub>(π<sup>*</sup>) denotes the reward attained by the best possible budget-agnostic comparator π<sup>*</sup> within a j-episode test-time budget.</p>
-                </div>
-
-                <p>While cumulative regret is an ideal metric for our objective, we cannot optimize it directly during training. The fundamental challenge is that computing cumulative regret requires access to an optimal comparator policy (π<sup>*</sup>) that achieves the highest possible reward within each episode budget. However, this optimal policy is unknown and unavailable—if we had access to it, we wouldn't need to train our model in the first place.</p>
-
-                <p>To overcome this limitation, we introduce <strong>progress</strong> as a practical, measurable surrogate:</p>
-                <div class="content has-text-justified tw-bg-blue-100 p-3 rounded-lg text-center mb-4">
-                  <p><b>Progress: A Practical Alternative</b></p>
-                  <p>Given prior context c and episode z<sub>j</sub> ~ π(·|c), and another meta-prover LLM μ that computes an estimate of the correct response, we define progress made by z<sub>j</sub> as:</p>
-                  <div class="columns is-centered"><img src="https://latex.codecogs.com/svg.latex?r_{\mathrm{prg}}^\mu(\mathbf{z}_j;\mathbf{c})=J_r(\mu(\cdot|\mathbf{z}_j,\mathbf{c}))-J_r(\mu(\cdot|\mathbf{c}))" alt="Progress Formula" /></div>
-                  <p></p>
-                </div>
-                <p>Progress measures how much each additional episode contributes to improving the model's performance. Intuitively, by maximizing progress across episodes, we're encouraging the model to continually improve its understanding and approach to the problem—which naturally minimizes cumulative regret over time.</p>
-            </div>
-            <h3 class="title is-4">The Meta Reinforcement Fine-tuning (MRT) Paradigm</h3>
-            <div class="content has-text-justified">
-              <div class="content has-text-justified tw-bg-blue-100 p-3 rounded-lg text-center mb-4">
-                  <p>Our MRT approach incorporates progress as a dense reward bonus during training. The standard fine-tuning loss based on the expected final reward is:</p>
-                  <div class="columns is-centered"><img src="https://latex.codecogs.com/svg.latex?\ell_\mathrm{FT}(\pi):=\mathbb{E}_{\mathbf{x}\sim\mathcal{D}_\mathrm{train},\mathbf{z}\sim\pi(\cdot|\mathbf{x})}\left[r(\mathbf{x},\mathbf{z})\right]" alt="Standard Fine-tuning Loss" /></div>
-                  <p></p>
-                </div>
-                <div class="content has-text-justified tw-bg-blue-100 p-3 rounded-lg text-center mb-4">
-                  <p>We extend this to incorporate progress, giving rise to the MRT training objective:</p>
-                  <div class="columns is-centered"><img src="https://latex.codecogs.com/svg.latex?\ell_\mathrm{MRT}(\pi;\pi_\mathrm{old}):=\ell_\mathrm{FT}(\pi)+\alpha\cdot\mathbb{E}_{\mathbf{x}\sim\mathcal{D}_\mathrm{train}}\left[\sum_{j=0}^{k-1}\mathbb{E}_{\mathbf{c}_{j-1}\sim\pi_\mathrm{old}(\cdot|\mathbf{x}),\mathbf{z}_j\sim\pi(\cdot|\mathbf{c}_{j-1})}[r_\mathrm{prg}^\mu(\mathbf{z}_j;\mathbf{c}_{j-1})]\right]" alt="MRT Training Objective" /></div>
-                  <p></p>
-                </div>
-                <p>Unlike traditional reinforcement learning that only rewards final outcomes, MRT:</p>
-
-                <ul>
-                    <li>Evaluates improvement at the episode level rather than token-by-token</li>
-                    <li>Balances exploration and exploitation naturally</li>
-                    <li>Remains effective across various compute budgets</li>
-                    <li>Rewards meaningful progress toward solutions</li>
-                </ul>
-
-                <p>By training models to minimize cumulative regret through our progress-based reward mechanism, we create LLMs that make efficient use of their test-time compute resources across both simple and complex problems.</p>
-            </div>
-        </div>
-      </div>
-    </section>
-    <section class="section" , id="Meta Reinforcement Finetuning">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered">
-          <div class="column is-full-width">
-            <h2 class="title is-3" id="setup">Meta Reinforcement Finetuning</h2>
-            <h3 class="title is-4">Methodology</h3>
-              <div style="display: flex; justify-content: center; gap: 20px; align-items: center;"><img
-                  src="static/images/mrt.png"
-                  alt="MRT"
-                  width="50%"
-                />
+              <p>
+                CaRT outperforms both the base model and supervised fine-tuning baselines on medical diagnosis tasks. The model learns to terminate at optimal points, achieving higher success rates while asking fewer questions.
+              </p>
+              <div style="display: flex; justify-content: center; gap: 20px; align-items: center;">
+                <img src="static/images/med_results.png" alt="Medical Diagnosis Results" width="80%" />
               </div>
-              <div class="content has-text-justified">
-                <p>We implements the meta-reinforcement learning paradigm using online reinforcement learning methods such as GRPO. Here's how it works:</p>
-                <div class="content has-text-justified tw-bg-blue-100 p-3 rounded-lg text-center mb-4">
-                <p><b>Meta-Prover Policy</b></p>
-                  <p>We define a meta-prover policy μ that evaluates how well an episode contributes to solving the problem. This policy works by:</p>
-                  <ol>
-                    <li>Forcefully terminating the thought block with a "time is up" prompt</li>
-                    <li>Having the model produce its best-guess solution given the current reasoning prefix</li>
-                  </ol>
-                  <div class="columns is-centered"><img src="https://latex.codecogs.com/svg.latex?\mu(\cdot|\mathbf{x},\mathbf{z}_{0:j})=\pi_b(\cdot|\mathbf{x},\mathbf{z}_{0:j},\mathrm{[\text{time is up}]},<\text{/{think}}>)" alt="Meta-Prover Policy Formula" /></div>
-                  <p></p>
-                </div>
-                <p>For each episode in the reasoning process, we:</p>
-                <ol>
-                  <li><strong>Compute rewards</strong> for thought prefixes using the meta-prover policy μ</li>
-                  <li><strong>Sample multiple on-policy rollouts</strong> conditioned on this prefix, which are evenly divided between:
-                      <ul>
-                          <li>Continuing to reason further</li>
-                          <li>Terminating the thinking trace and producing the best-guess solution</li>
-                      </ul>
-                  </li>
-                  <li><strong>Calculate progress rewards</strong> according to our progress definition</li>
-                </ol>
-                 <p>During training, we optimize the MRT objective function that incorporates both the standard outcome reward and our progress-based dense reward bonus:</p>
-                <div class="columns is-centered"><img src="https://latex.codecogs.com/svg.latex?\ell_\mathrm{MRT}(\pi;\pi_\mathrm{old}):=\ell_\mathrm{FT}(\pi)+\alpha\cdot\mathbb{E}_{\mathbf{x}\sim\mathcal{D}_\mathrm{train}}\left[\sum_{j=0}^{k-1}\mathbb{E}_{\mathbf{c}_{j-1}\sim\pi_\mathrm{old}(\cdot|\mathbf{x}),\mathbf{z}_j\sim\pi(\cdot|\mathbf{c}_{j-1})}[r_\mathrm{prg}^\mu(\mathbf{z}_j;\mathbf{c}_{j-1})]\right]" alt="MRT Training Objective" /></div>
-                 <p>While this procedure can be implemented with episode-specific reward bonuses or a single progress-adjusted reward, we opt for the latter approach due to its plug-and-play nature in current outcome-reward RL implementations.</p>
-            <div class="content has-text-justified">
-            </div>
-            <h3 class="title is-4">Performance</h3>
-            <div class="content has-text-justified">
-              <table style="width: 100%; border-collapse: collapse; font-size:small; line-height:0.9; font-family: Arial, sans-serif; margin: 20px 0; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);">
-              <thead>
-                <tr style="background-color: #66cc995b;">
-                  <th style="color: black; padding: 10px; text-align: left;  border: 1px solid #ddd;">Model</th>
-                  <th style="color: black; padding: 10px; text-align: left;  border: 1px solid #ddd; font-weight: 100;">AIME 2024</th>
-                  <th style="color: black; padding: 10px; text-align: left;  border: 1px solid #ddd; font-weight: 100;">AIME 2025</th>
-                  <th style="color: black; padding: 10px; text-align: left;  border: 1px solid #ddd; font-weight: 100;">AMC 2023</th>
-                  <th style="color: black; padding: 10px; text-align: left;  border: 1px solid #ddd; font-weight: 100;">Minerva MATH</th>
-                  <th style="color: black; padding: 10px; text-align: left;  border: 1px solid #ddd; font-weight: 100;">MATH500</th>
-                  <th style="color: black; padding: 10px; text-align: left;  border: 1px solid #ddd; font-weight: 100;">Avg.</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr style="background-color: #f2f2f2;">
-                  <td style="padding: 10px; text-align: left; border: 1px solid #ddd; font-weight: bold;">DeepScaleR-1.5B-Preview</td>
-                  <td style="padding: 10px; text-align: left;  border-left: none; border-right: none;">42.8</td>
-                  <td style="padding: 10px; text-align: left;  border-left: none; border-right: none;">36.7</td>
-                  <td style="padding: 10px; text-align: left;  border-left: none; border-right: none;">83.0</td>
-                  <td style="padding: 10px; text-align: left;  border-left: none; border-right: none;">24.6</td>
-                  <td style="font-weight: bold; padding: 10px; text-align: left;  border-left: none; border-right: none;">85.2</td>
-                  <td style="padding: 10px; text-align: left;  border-left: none; border-right: none;">54.5</td>
-                </tr>
-                <tr>
-                  <td style="padding: 10px; text-align: left; border: 1px solid #ddd;"> + outcome-reward RL</td>
-                  <td style="padding: 10px; text-align: left;  border-left: none; border-right: none;">44.5 (+1.7)</td>
-                  <td style="padding: 10px; text-align: left;  border-left: none; border-right: none;">39.3 (+2.6)</td>
-                  <td style="padding: 10px; text-align: left;  border-left: none; border-right: none;">81.5 (-1.5)</td>
-                  <td style="font-weight: bold; padding: 10px; text-align: left;  border-left: none; border-right: none;">24.7</td>
-                  <td style="padding: 10px; text-align: left;  border-left: none; border-right: none;">84.9</td>
-                  <td style="padding: 10px; text-align: left;  border-left: none; border-right: none;">55.0 (+0.5)</td>
-                </tr>
-                <tr>
-                  <td style="padding: 10px; text-align: left; border: 1px solid #ddd;"> + length penalty</td>
-                  <td style="padding: 10px; text-align: left;  border-left: none; border-right: none;">40.3 (-2.5)</td>
-                  <td style="padding: 10px; text-align: left;  border-left: none; border-right: none;">30.3 (-6.4)</td>
-                  <td style="padding: 10px; text-align: left;  border-left: none; border-right: none;">77.3 (-5.7)</td>
-                  <td style="padding: 10px; text-align: left;  border-left: none; border-right: none;">23.0</td>
-                  <td style="padding: 10px; text-align: left;  border-left: none; border-right: none;">83.2</td>
-                  <td style="padding: 10px; text-align: left;  border-left: none; border-right: none;">50.8 (-3.7)</td>
-                </tr>
-                <tr style="background-color: #FFD95F">
-                  <td style="padding: 10px; text-align: left; border: 1px solid #ddd;"> + MRT (Ours)</td>
-                  <td style="font-weight: bold; padding: 10px; text-align: left;  border-left: none; border-right: none;">47.2 (+4.4)</td>
-                  <td style="font-weight: bold; padding: 10px; text-align: left;  border-left: none; border-right: none;">39.7 (+3.0)</td>
-                  <td style="font-weight: bold; padding: 10px; text-align: left;  border-left: none; border-right: none;">83.1 (+0.1)</td>
-                  <td style="padding: 10px; text-align: left;  border-left: none; border-right: none;">24.2</td>
-                  <td style="padding: 10px; text-align: left;  border-left: none; border-right: none;">85.1</td>
-                  <td style="padding: 10px; text-align: left;  border-left: none; border-right: none;">55.9 (+1.4)</td>
-                </tr>
-                <tr style="background-color: #f2f2f2;">
-                  <td style="padding: 10px; text-align: left; border: 1px solid #ddd; font-weight: bold;">R1-Distill-Qwen-1.5B</td>
-                  <td style="padding: 10px; text-align: left;  border-left: none; border-right: none;">28.7</td>
-                  <td style="padding: 10px; text-align: left;  border-left: none; border-right: none;">26.0</td>
-                  <td style="padding: 10px; text-align: left;  border-left: none; border-right: none;">69.9</td>
-                  <td style="padding: 10px; text-align: left;  border-left: none; border-right: none;">19.8</td>
-                  <td style="padding: 10px; text-align: left;  border-left: none; border-right: none;">80.1</td>
-                  <td style="padding: 10px; text-align: left;  border-left: none; border-right: none;">44.9</td>
-                </tr>
-                <tr>
-                  <td style="padding: 10px; text-align: left; border: 1px solid #ddd;"> + outcome-reward RL</td>
-                  <td style="padding: 10px; text-align: left;  border-left: none; border-right: none;">29.8 (+1.1)</td>
-                  <td style="padding: 10px; text-align: left;  border-left: none; border-right: none;">27.3 (+1.3)</td>
-                  <td style="padding: 10px; text-align: left;  border-left: none; border-right: none;">70.5 (+0.6)</td>
-                  <td style="padding: 10px; text-align: left;  border-left: none; border-right: none;">22.1</td>
-                  <td style="padding: 10px; text-align: left;  border-left: none; border-right: none;">80.3</td>
-                  <td style="padding: 10px; text-align: left;  border-left: none; border-right: none;">46.0 (+1.1)</td>
-                </tr>
-                <tr style="background-color: #FFD95F;">
-                  <td style="padding: 10px; text-align: left; border: 1px solid #ddd;"> + MRT (Ours)</td>
-                  <td style="font-weight: bold; padding: 10px; text-align: left;  border-left: none; border-right: none;">30.3 (+1.6)</td>
-                  <td style="font-weight: bold; padding: 10px; text-align: left;  border-left: none; border-right: none;">29.3 (+3.3)</td>
-                  <td style="font-weight: bold; padding: 10px; text-align: left;  border-left: none; border-right: none;">72.9 (+3.0)</td>
-                  <td style="font-weight: bold; padding: 10px; text-align: left;  border-left: none; border-right: none;">22.5</td>
-                  <td style="font-weight: bold; padding: 10px; text-align: left;  border-left: none; border-right: none;">80.3</td>
-                  <td style="font-weight: bold; padding: 10px; text-align: left;  border-left: none; border-right: none;">47.1 (+2.2)</td>
-                </tr>
-              </tbody>
-            </table>
-            <div class="content has-text-justified">
-            <p><b>Key Findings</b></p>
-            <ul>
-              <li><b>State-of-the-art results:</b> Models fine-tuned with MRT on top of DeepScaleR-1.5B-Preview achieve state-of-the-art performance for their size. The relative improvement from using MRT is <b>2-3x greater</b> than the improvement from vanilla outcome-reward RL (GRPO).</li>
-              
-              <li><b>Better out-of-distribution robustness:</b> When fine-tuned on AIME problems with DeepScaleR-1.5B, MRT not only performed better on AIME2024 and AIME2025 evaluation sets but also preserved performance on the out-of-distribution AMC2023 dataset compared to outcome-reward RL.</li>
-              
-              <li><b>Larger gains with weaker models and broad training data:</b> Performance gains were smaller with the DeepScaleR-1.5B base model (which was already trained with RL) compared to the DeepSeek-R1-Distill-Qwen-1.5B model (which was not).</li>
-          </ul>
-            </div>
-            <h3 class="title is-4">Token-efficiency of MRT</h3>
-            <div class="content has-text-justified">
-              <p>Beyond improving accuracy, Meta Reinforcement Fine-tuning (MRT) significantly enhances token efficiency when solving complex problems. We evaluated this by comparing models trained with MRT against baseline models using standard outcome-reward RL.</p>
-
-              <p>Our evaluation methodology involved training the model with 16K tokens and computing maj@K on multiple reasoning and solution traces. By plotting the tradeoff between maj@K and the sum of tokens used across K generations, we obtained a robust estimate of model performance <em>per token</em> generated during reasoning.</p>   
-              <div style="display: flex; justify-content: center; gap: 20px; align-items: center;"><img
-                  src="static/images/AIME_ds_1.5_maj@k.png"
-                  alt="AIME Maj@k"
-                  width="40%"
-                />
-                <img
-                  src="static/images/MATH500_ds_1.5_maj@k.png"
-                  alt="MATH500 Maj@k"
-                  width="40%"
-                />
-                </div>
-                <p class="tw-text-left tw-text-sm tw-text-gray-500 tw-mt-4">
-                <b>MRT</b> results on DeepSeek-R1-Distill-Qwen-1.5B. We plot maj@k performance of models for k = 1, 2, ..., 10 on AIME 2024 (left) and MATH500 (right). The orange lines correspond to <b>MRT</b> and the green lines correspond to outcome-reward training.
-                </p>    
-              <div class="content has-text-justified tw-bg-orange-100 p-3 rounded-lg text-center mb-4">
-              <p><b>Key Findings</b></p>
-                <ul>
-                  <li>MRT outperforms baseline models by an average of <b>5%</b> accuracy given the same number of total tokens on AIME 2024</li>
-                  <li>To achieve the same performance as the base model (DeepSeek-R1 distilled Qwen-1.5B), MRT requires: <b>5x fewer tokens</b> on AIME 2024 and <b>4x fewer tokens</b> on MATH 500</li>
-                  <li>MRT improves over outcome-reward RL by <b>1.2-1.6x</b> in token efficiency</li>
-                </ul>
-              </div>
-            </div>
-            <h3 class="title is-4">Progress Made By MRT Compared to Outcome-Reward Training</h3>
-            <div class="content has-text-justified">
-                <p>We measure regret against a theoretical optimal policy π<sup>*</sup> that achieves perfect accuracy in a single episode. To compare different fine-tuning algorithms fairly, we reparameterize regret as a function of token budget C<sub>0</sub> rather than the number of episodes.</p>
-              
-                <p>For any given token budget C<sub>0</sub>, we measure regret by computing:</p>
-                <ol>
-                    <li>The average accuracy of all traces that finish within budget C<sub>0</sub></li>
-                    <li>The area between the constant oracle performance of 1.0 and the algorithm's performance at different values of C<sub>0</sub></li>
-                    <li>Performance normalized by C<sub>0</sub></li>
-                </ol>
-                <div style="display: flex; justify-content: center; gap: 20px; align-items: center;"><img
-                  src="static/images/regret_mrt_rl.png"
-                  alt="AIME Maj@k"
-                  width="60%"
-                />
-                </div>
-                <p class="tw-text-left tw-text-sm tw-text-gray-500 tw-mt-4">
-                <b>Normalized regret of different algorithms at different deployment @token budgets C<sub>0</sub>.</b> The first four points are at budgets 4096, 8192, 12288, and 16384. The next four points in dashed lines are extrapolations to C<sub>0</sub> =  20480, 24576, 28672, and 32768, which correspond to 2, 4, 6, and 8 extensions of the output trace, following the budget forcing technique in s1. We conduct this study on AIME 2025. Observe that <b>MRT</b> leads to the smallest normalized regret, both when evaluating within the maximal budget and when extrapolating to larger budgets.</a>
-                <div class="content has-text-justified tw-bg-orange-100 p-3 rounded-lg text-center mb-4">
-                <p><b>Key Findings</b></p>
-                <ul>
-                  <li>The normalized regret for MRT decreases faster compared to both the base model and outcome-reward RL when the total token budget C₀ ≤ 16384 (the token budget used for training)</li>
-                  <li>When extrapolating beyond the training budget by forcing the model to continue thinking, MRT continues to attain the lowest normalized regret</li>
-                  <li>This indicates MRT is more effective at attaining low regret at larger budgets, as expected from methods that produce more budget-agnostic scaling</li>
-                </ul>
-              </div>
-            </div>
-            <h3 class="title is-4">Evolution of Length and Progress over Training</h3>
-            <div class="content has-text-justified">
-              <p>We studied the relationship between progress (the dense reward signal used in MRT) and response length, which has been considered a crucial factor in recent advances from DeepSeek and others. We investigated two key questions:</p>
-              <div class="content has-text-justified tw-bg-blue-100 p-3 rounded-lg text-center mb-4">
-                <p><b>Question 1:</b> How does length evolve during training with MRT and outcome-reward RL over a fixed prompt distribution?</p>
-              </div>
-              <div style="display: flex; justify-content: center; gap: 20px; align-items: center;"><img
-                  src="static/images/training_completion_length_deepscale.png"
-                  alt="Training Completion Length"
-                  width="40%"
-                />
+              <div style="display: flex; justify-content: center; gap: 20px; align-items: center;">
+                <img src="static/images/med_ood_results.png" alt="Medical Diagnosis Results" width="80%" />
               </div>
               <p class="tw-text-left tw-text-sm tw-text-gray-500 tw-mt-4">
-                Evolution of length during RL training. Length largely oscillates around similar values for most of training, after an initial increase from the initialization length.
-                </p>
-                <div class="content has-text-justified tw-bg-orange-100 p-3 rounded-lg text-center mb-4">
-                  <p><b>Key Findings</b></p>
-                  <ul>
-                    <li>The average completion length generally oscillates around ~5000 tokens during training with both MRT (RL) and GRPO on the AIME dataset</li>
-                    <li>Compared to GRPO, <b>MRT slightly reduces response length</b> (the orange curve generally falls below the green curve)</li>
-                    <li>This aligns with our expectation that optimizing for progress should lead to some reduction in token length</li>
-                    <li>However, this decrease is not as dramatic as the one seen with an explicit length penalty, which reduces length at the cost of worse performance</li>
-                  </ul>
-                </div>
-                <div class="content has-text-justified tw-bg-blue-100 p-3 rounded-lg text-center mb-4">
-                <p><b>Question 2:</b> Question 2: Can the benefits of increasing output token budget be explained by enhanced progress?</p>
-                </div> 
-                <p>Despite the supposed gains from running RL training with a large output budget from the beginning, several studies have found that training at higher budgets results in inefficient compute use. Concurrent work finds that a more effective approach is to:</p>
-                <ol>
-                    <li>Initialize RL training with a smaller output token budget (8K tokens)</li>
-                    <li>Expand this budget to 16K after half of the training</li>
-                </ol>
-                <p>This raises the question: What benefits does such a "curriculum" over output token budget provide?</p>
-                              <div style="display: flex; justify-content: center; gap: 20px; align-items: center;"><img
-                  src="static/images/deepscaler_length_performance.png"
-                  alt="AIME Maj@k"
-                  width="50%"
-                />
-                <img
-                  src="static/images/8k16k.png"
-                  alt="MATH500 Maj@k"
-                  width="37%"
-                />
-                </div>
-                <p class="tw-text-left tw-text-sm tw-text-gray-500 tw-mt-4">
-                <b>Left:</b>(Source:) DeepScaleR’s average response length and training rewards as training progresses. <b>Right:</b> Regret for 8K and 16K DeepScaleR checkpoints at different budgets. For budgets beyond 8192, we calculate the normalized regret of the 8K checkpoint by extrapolating it with budget forcing. At nearly all budgets, the 8K checkpoint shows lower normalized regret, indicating better progress.
-                </p> 
-                <p>Our comprehensive analysis of the curriculum learning reveals:</p>
-                <ul>
-                  <li><b>Performance increases while length reduces</b>, demonstrating that increasing length is not necessary for performance improvement</li>
-                  <li>The 8K checkpoint attains lower normalized regret compared to the 16K model, meaning each episode makes more efficient progress</li>
-                  <li>When extrapolating the 8K checkpoint to 16K evaluation tokens via budget forcing, it achieves similar normalized regret to the 16K checkpoint</li>
-                  <li>The change in accuracy per token/episode is higher during this initial phase than during the subsequent 16K budget phase</li>
-                  <li>This curriculum approach (starting with 8K, then increasing to 16K) achieves better overall performance than training with a 16K budget from scratch</li>
-              </ul>
-              <div class="content has-text-justified tw-bg-orange-100 p-3 rounded-lg text-center mb-4">
-              <p><b>Key Findings</b></p>
-                <ul>
-                  <li>Simple length penalties improve token efficiency but ultimately sacrifice peak performance.</li>
-                  <li>Using dense rewards in MRT also does reduce length slightly, but increases performance.</li>
-                  <li>Existing approaches for using curricula over the maximum allowed token budget or multi-stage training serves as an implicit way to encourage progress over the course of RL training.</li>
-                </ul>
-              </div>
+                <b>CaRT performance on medical diagnosis.</b> (a) Results on holdout in-distribution data showing CaRT outperforms the base model and SFT baseline across all metrics. (b) CaRT maintains superior performance on out-of-distribution dermatology diagnosis tasks.
+              </p>
             </div>
+
+            <h3 class="title is-4">Math Problem Solving</h3>
+            <div class="content has-text-justified">
+              <p>
+                In the math domain, CaRT achieves higher success rates while using fewer tokens compared to baseline approaches. The model learns when to stop reasoning and provide an answer, avoiding unnecessarily long thinking traces.
+              </p>
+              <div style="display: flex; justify-content: center; gap: 20px; align-items: center;">
+                <img src="static/images/math_results.png" alt="Math Reasoning Results" width="80%" />
               </div>
+              <p class="tw-text-left tw-text-sm tw-text-gray-500 tw-mt-4">
+                <b>CaRT performance on AIME2025 math problems.</b> CaRT outperforms the base model and SFT baseline, achieving higher success rates with fewer output tokens.
+              </p>
+            </div>
+
+    
           </div>
         </div>
       </div>
     </section>
-    <!--BibTex citation -->
-    <section class="section" id="BibTeX">
+
+    <!-- Ablation Studies -->
+    <section class="section" id="ablations">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column is-full-width">
+            <h2 class="title is-3">Ablation Studies</h2>
+
+            <div style="display: flex; justify-content: center; gap: 20px; align-items: center;">
+              <img src="static/images/med_ablations.png" alt="Ablation Study Results" width="80%" />
+            </div>
+            <p class="tw-text-left tw-text-sm tw-text-gray-500 tw-mt-4">
+              <b>Ablation study on medical diagnosis.</b> We ablate counterfactual training data and reasoning augmentation, showing that both components contribute to improved termination performance. Counterfactuals provide the largest gains.
+            </p>
+            <br />
+            <br />
+  
+            <div style="display: flex; justify-content: center; gap: 20px; align-items: center;">
+              <img src="static/images/term_trajs.png" alt="Termination Rate Curves" width="70%" />
+            </div>
+            <p class="tw-text-left tw-text-sm tw-text-gray-500 tw-mt-4">
+              <b>Analysis of model termination rates.</b> We find that base models maintain low rates regardless of context and the baseline SFT learns to increase termination rate as conversation length increases (top row). Adding counterfactuals enables the model to learn to terminate when sufficient information is gathered (middle row), and reasoning smooths these curves while maintaining information sensitivity (bottom row).
+            </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Findings -->
+    <section class="section hero is-light" id="key-findings">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">Key Findings</h2>
+            <div class="content has-text-justified">
+              <ul>
+                <li>
+                  <strong>Counterfactual training examples with explicit reasoning help models learn good termination behavior:</strong> By training on counterfactual examples of termination with explicit reasoning, LLMs learn to recognize when they have acquired sufficient information to solve the task.
+                </li>
+                <li>
+                  <strong>The approach generalizes across domains:</strong> CaRT demonstrates strong performance across both medical diagnosis tasks and mathematical problem solving, achieving higher accuracy with fewer tokens and interactions. 
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BibTeX -->
+    <!-- <section class="section" id="BibTeX">
       <div class="container is-max-desktop content">
         <h2 class="title">BibTeX</h2>
         <pre><code>
-@misc{qu2025optimizingtesttimecomputemeta,
-      title={Optimizing Test-Time Compute via Meta Reinforcement Fine-Tuning}, 
-      author={Yuxiao Qu and Matthew Y. R. Yang and Amrith Setlur and Lewis Tunstall and Edward Emanuel Beeching and Ruslan Salakhutdinov and Aviral Kumar},
-      year={2025},
-      eprint={2503.07572},
-      archivePrefix={arXiv},
-      primaryClass={cs.LG},
-      url={https://arxiv.org/abs/2503.07572}, 
+@article{anonymous2026cart,
+  title={Teaching LLMs When to Stop Seeking and Start Acting},
+  author={Anonymous},
+  journal={Under review at ICLR 2026},
+  year={2026}
 }
         </code></pre>
       </div>
-    </section>
-    <!--End BibTex citation -->
+    </section> -->
 
     <footer class="footer">
       <div class="container">
@@ -702,40 +449,26 @@
           <div class="column is-8">
             <div class="content">
               <p>
-                Corresponding Author:
-                <a href="mailto:yuxiaoq@andrew.cmu.edu">Yuxiao Qu</a>
+                Corresponding author: Grace Liu (gliu2@andrew.cmu.edu)
                 <br />
+                
                 This page was built using the
-                <a
-                  href="https://github.com/eliahuhorwitz/Academic-project-page-template"
-                  target="_blank"
-                  >Academic Project Page Template</a
-                >
-                which was adopted from the <a
-                  href="https://nerfies.github.io"
-                  target="_blank"
-                  >Nerfies</a
-                > project page.
+                <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">
+                  Academic Project Page Template
+                </a>
+                which was adopted from the 
+                <a href="https://nerfies.github.io" target="_blank">Nerfies</a>
+                project page.
                 <br />
                 This website is licensed under a
-                <a
-                  rel="license"
-                  href="http://creativecommons.org/licenses/by-sa/4.0/"
-                  target="_blank"
-                  >Creative Commons Attribution-ShareAlike 4.0 International
-                  License</a
-                >.
+                <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">
+                  Creative Commons Attribution-ShareAlike 4.0 International License
+                </a>.
               </p>
             </div>
           </div>
         </div>
       </div>
     </footer>
-
-    <!-- Statcounter tracking code -->
-
-    <!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
-
-    <!-- End of Statcounter Code -->
   </body>
 </html>
