@@ -116,22 +116,18 @@
       </div>
     </section>
 
-    <!-- Page Outline -->
-    <section class="section">
+    <!-- Teaser -->
+    <section class="hero teaser">
       <div class="container is-max-desktop">
-        <div class="columns is-centered">
-          <div class="column is-four-fifths">
-            <div class="content has-text-centered">
-              <h3 class="title is-4">Outline</h3>
-              <p class="tw-text-lg">
-                <a href="#motivation" class="tw-mx-3">The Problem</a> |
-                <a href="#method" class="tw-mx-3">CaRT Method</a> |
-                <a href="#results" class="tw-mx-3">Results</a> |
-                <a href="#ablations" class="tw-mx-3">Ablations</a> |
-                <a href="#key-findings" class="tw-mx-3">Key Findings</a>
-              </p>
+        <div class="hero-body">
+            <div class="has-text-centered">
+              <div class="text-center" style="display: flex; justify-content: center;">
+                <img src="static/images/cart_teaser.png" alt="CaRT Termination Behavior" class="mx-auto" style="width: 80%;"/>
+              </div>
             </div>
-          </div>
+          <p class="tw-text-left tw-text-sm tw-text-gray-500 tw-mt-3">
+            <b>A schematic illustration of termination behavior with and without CaRT.</b> While LLMs typically fail to recognize the best points to stop thinking or questioning, our approach CaRT teaches them to correctly identify when they have gathered sufficient information to solve a task, avoiding wasted computation on easy problems and making steady progress on hard problems.
+          </p>    
         </div>
       </div>
     </section>
@@ -160,125 +156,54 @@
             <h2 class="title is-3">The Termination Problem</h2>
 
             <div class="tw-flex tw-flex-wrap tw-justify-center tw-gap-4">
-              <!-- Terminates Too Early -->
-              <div class="tw-p-6 tw-shadow-lg tw-rounded-2xl tw-flex-1 tw-min-w-[250px] tw-max-w-sm tw-bg-gray-50">
-                <div class="tw-space-y-3">
+              <div class="tw-p-6 tw-shadow-lg tw-rounded-2xl tw-max-w-3xl tw-flex-1 tw-min-w-[300px]">
+                <h2 class="tw-text-xl tw-font-semibold tw-text-gray-700 tw-mb-4">Medical Diagnosis</h2>
+                <div class="tw-space-y-4">
                   <div class="tw-flex tw-items-start">
-                    <div class="tw-bg-blue-100 tw-p-2 tw-rounded-lg tw-max-w-xs">
-                      <p class="tw-text-gray-700 tw-text-sm">Hi! What symptoms are you facing today?</p>
+                    <div class="tw-bg-blue-100 tw-p-3 tw-rounded-lg tw-max-w-xs">
+                      <p class="tw-text-gray-700">Hi! What symptoms are you facing today?</p>
                     </div>
                   </div>
                   <div class="tw-flex tw-items-start tw-justify-end">
-                    <div class="tw-bg-blue-50 tw-p-2 tw-rounded-lg tw-max-w-xs">
-                      <p class="tw-text-gray-700 tw-text-sm">Chest pain, trouble breathing, nausea, tingling in my arms.</p>
-                    </div>
-                  </div>
-                  <div class="tw-bg-red-100 tw-p-3 tw-rounded-lg tw-mt-4">
-                    <p class="tw-text-gray-700 tw-text-sm tw-font-semibold">Final Diagnosis: Heart Attack ✗</p>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Terminates Too Late -->
-              <div class="tw-p-6 tw-shadow-lg tw-rounded-2xl tw-flex-1 tw-min-w-[250px] tw-max-w-sm tw-bg-gray-50">
-                <div class="tw-space-y-3">
-                  <div class="tw-flex tw-items-start">
-                    <div class="tw-bg-blue-100 tw-p-2 tw-rounded-lg tw-max-w-xs">
-                      <p class="tw-text-gray-700 tw-text-sm">Hi! What symptoms are you facing today?</p>
-                    </div>
-                  </div>
-                  <div class="tw-flex tw-items-start tw-justify-end">
-                    <div class="tw-bg-blue-50 tw-p-2 tw-rounded-lg tw-max-w-xs">
-                      <p class="tw-text-gray-700 tw-text-sm">Chest pain, trouble breathing, nausea, tingling in my arms.</p>
+                    <div class="tw-bg-green-100 tw-p-3 tw-rounded-lg tw-max-w-xl">
+                      <p class="tw-text-gray-700">Chest pain, trouble breathing, nausea, tingling in my arms.</p>
                     </div>
                   </div>
                   <div class="tw-flex tw-items-start">
-                    <div class="tw-bg-blue-100 tw-p-2 tw-rounded-lg tw-max-w-xs">
-                      <p class="tw-text-gray-700 tw-text-sm">What is your age and sex?</p>
+                    <div class="tw-bg-blue-100 tw-p-3 tw-rounded-lg tw-max-w-xs">
+                      <p class="tw-text-gray-700">What is your age and sex?</p>
                     </div>
                   </div>
                   <div class="tw-flex tw-items-start tw-justify-end">
-                    <div class="tw-bg-blue-50 tw-p-2 tw-rounded-lg tw-max-w-xs">
-                      <p class="tw-text-gray-700 tw-text-sm">I am a 25-year-old woman.</p>
+                    <div class="tw-bg-green-100 tw-p-3 tw-rounded-lg tw-max-w-xl">
+                      <p class="tw-text-gray-700">I am a 25-year-old woman.</p>
                     </div>
                   </div>
                   <div class="tw-flex tw-items-start">
-                    <div class="tw-bg-blue-100 tw-p-2 tw-rounded-lg tw-max-w-xs">
-                      <p class="tw-text-gray-700 tw-text-sm">Have you recently been under stress or experienced anxiety?</p>
+                    <div class="tw-bg-blue-100 tw-p-3 tw-rounded-lg tw-max-w-xs">
+                      <p class="tw-text-gray-700">Have you recently been under stress or experienced anxiety?</p>
                     </div>
                   </div>
                   <div class="tw-flex tw-items-start tw-justify-end">
-                    <div class="tw-bg-blue-50 tw-p-2 tw-rounded-lg tw-max-w-xs">
-                      <p class="tw-text-gray-700 tw-text-sm">Yes, I've had episodes where my heart races, I feel like I'm losing control, and I'm terrified I'm going to die.</p>
+                    <div class="tw-bg-green-100 tw-p-3 tw-rounded-lg tw-max-w-xl">
+                      <p class="tw-text-gray-700">I have been feeling very scared and panicked</p>
                     </div>
                   </div>
-                  <div class="tw-text-center tw-py-2">
-                    <p class="tw-text-gray-500 tw-text-2xl tw-font-bold">...</p>
-                  </div>
-                  <div class="tw-flex tw-items-start">
-                    <div class="tw-bg-blue-100 tw-p-2 tw-rounded-lg tw-max-w-xs">
-                      <p class="tw-text-gray-700 tw-text-sm">Do you have a history of heart disease in your family?</p>
-                    </div>
-                  </div>
-                  <div class="tw-flex tw-items-start tw-justify-end">
-                    <div class="tw-bg-blue-50 tw-p-2 tw-rounded-lg tw-max-w-xs">
-                      <p class="tw-text-gray-700 tw-text-sm">Yes, my father had a heart attack at age 50.</p>
-                    </div>
-                  </div>
-                  <div class="tw-bg-red-100 tw-p-3 tw-rounded-lg">
-                    <p class="tw-text-gray-700 tw-text-sm tw-font-semibold">Final Diagnosis: Heart Attack ✗</p>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Terminates Correctly -->
-              <div class="tw-p-6 tw-shadow-lg tw-rounded-2xl tw-flex-1 tw-min-w-[250px] tw-max-w-sm tw-bg-gray-50">
-                <div class="tw-space-y-3">
-                  <div class="tw-flex tw-items-start">
-                    <div class="tw-bg-blue-100 tw-p-2 tw-rounded-lg tw-max-w-xs">
-                      <p class="tw-text-gray-700 tw-text-sm">Hi! What symptoms are you facing today?</p>
-                    </div>
-                  </div>
-                  <div class="tw-flex tw-items-start tw-justify-end">
-                    <div class="tw-bg-blue-50 tw-p-2 tw-rounded-lg tw-max-w-xs">
-                      <p class="tw-text-gray-700 tw-text-sm">Chest pain, trouble breathing, nausea, tingling in my arms.</p>
-                    </div>
-                  </div>
-                  <div class="tw-flex tw-items-start">
-                    <div class="tw-bg-blue-100 tw-p-2 tw-rounded-lg tw-max-w-xs">
-                      <p class="tw-text-gray-700 tw-text-sm">What is your age and sex?</p>
-                    </div>
-                  </div>
-                  <div class="tw-flex tw-items-start tw-justify-end">
-                    <div class="tw-bg-blue-50 tw-p-2 tw-rounded-lg tw-max-w-xs">
-                      <p class="tw-text-gray-700 tw-text-sm">I am a 25-year-old woman.</p>
-                    </div>
-                  </div>
-                  <div class="tw-flex tw-items-start">
-                    <div class="tw-bg-blue-100 tw-p-2 tw-rounded-lg tw-max-w-xs">
-                      <p class="tw-text-gray-700 tw-text-sm">Have you recently been under stress or experienced anxiety?</p>
-                    </div>
-                  </div>
-                  <div class="tw-flex tw-items-start tw-justify-end">
-                    <div class="tw-bg-blue-50 tw-p-2 tw-rounded-lg tw-max-w-xs">
-                      <p class="tw-text-gray-700 tw-text-sm">Yes, I've had episodes where my heart races, I feel like I'm losing control, and I'm terrified I'm going to die.</p>
-                    </div>
-                  </div>
-                  <div class="tw-bg-green-100 tw-p-3 tw-rounded-lg">
-                    <p class="tw-text-gray-700 tw-text-sm tw-font-semibold">Final Diagnosis: Panic Attack ✓</p>
+                  <div class="tw-bg-yellow-100 tw-p-3 tw-rounded-lg">
+                    <p class="tw-text-gray-700 tw-text-sm">Final Diagnosis: Panic Attack</p>
                   </div>
                 </div>
               </div>
             </div>
 
             <p class="tw-text-left tw-text-sm tw-text-gray-500 tw-mt-3">
-              <b>Simplified example of terminating information gathering in the medical diagnosis domain.</b> Left: Terminating too early leads to incorrect diagnosis. Middle: Terminating too late results in unnecessary additional interaction. Right: Optimal termination occurs after gathering sufficient information.
+              <b>Simplified example of terminating information gathering in the medical diagnosis domain.</b>
             </p>
 
             <div class="content has-text-justified tw-mt-6">
               <p>
                 Deciding when to stop gathering information is challenging because it requires predicting the expected future utility of continuing under the model's current policy. 
-                We build an approach to imbue LLMs with the ability to stop or "terminate" their internal thinking processes and/or environment interaction at the right point for maximal performance, 
+                We build an approach to imbue LLMs with the ability to stop or ``terminate'' their internal thinking processes and/or environment interaction at the right point for maximal performance, 
                 without wasting computation or interaction. 
               </p>
             </div>
@@ -316,7 +241,7 @@
                       </div>
                     </div>
                     <div class="tw-flex tw-items-start tw-justify-end">
-                      <div class="tw-bg-blue-50 tw-p-2 tw-rounded-lg tw-max-w-xs">
+                      <div class="tw-bg-green-100 tw-p-2 tw-rounded-lg tw-max-w-xs">
                         <p class="tw-text-gray-700 tw-text-sm">Chest pain, trouble breathing, nausea, tingling.</p>
                       </div>
                     </div>
@@ -326,7 +251,7 @@
                       </div>
                     </div>
                     <div class="tw-flex tw-items-start tw-justify-end">
-                      <div class="tw-bg-blue-50 tw-p-2 tw-rounded-lg tw-max-w-xs">
+                      <div class="tw-bg-green-100 tw-p-2 tw-rounded-lg tw-max-w-xs">
                         <p class="tw-text-gray-700 tw-text-sm">I am a 25-year-old woman.</p>
                       </div>
                     </div>
@@ -336,11 +261,11 @@
                       </div>
                     </div>
                     <div class="tw-flex tw-items-start tw-justify-end">
-                      <div class="tw-bg-blue-50 tw-p-2 tw-rounded-lg tw-max-w-xs">
-                        <p class="tw-text-gray-700 tw-text-sm tw-font-semibold">Yes, I've had episodes where my heart races, I feel like I'm losing control, and I'm terrified I'm going to die.</p>
+                      <div class="tw-bg-green-100 tw-p-2 tw-rounded-lg tw-max-w-xs">
+                        <p class="tw-text-gray-700 tw-text-sm tw-font-semibold">I've been feeling very scared and panicked.</p>
                       </div>
                     </div>
-                    <div class="tw-bg-green-100 tw-p-2 tw-rounded-lg tw-mt-3">
+                    <div class="tw-bg-green-200 tw-p-2 tw-rounded-lg tw-mt-3">
                       <p class="tw-text-gray-800 tw-text-xs tw-font-semibold tw-text-center">Decision: Terminate, Diagnosis: Panic Attack</p>
                     </div>
                   </div>
@@ -356,7 +281,7 @@
                       </div>
                     </div>
                     <div class="tw-flex tw-items-start tw-justify-end">
-                      <div class="tw-bg-blue-50 tw-p-2 tw-rounded-lg tw-max-w-xs">
+                      <div class="tw-bg-green-100 tw-p-2 tw-rounded-lg tw-max-w-xs">
                         <p class="tw-text-gray-700 tw-text-sm">Chest pain, trouble breathing, nausea, tingling.</p>
                       </div>
                     </div>
@@ -366,7 +291,7 @@
                       </div>
                     </div>
                     <div class="tw-flex tw-items-start tw-justify-end">
-                      <div class="tw-bg-blue-50 tw-p-2 tw-rounded-lg tw-max-w-xs">
+                      <div class="tw-bg-green-100 tw-p-2 tw-rounded-lg tw-max-w-xs">
                         <p class="tw-text-gray-700 tw-text-sm">I am a 25-year-old woman.</p>
                       </div>
                     </div>
@@ -376,7 +301,7 @@
                       </div>
                     </div>
                     <div class="tw-flex tw-items-start tw-justify-end">
-                      <div class="tw-bg-blue-50 tw-p-2 tw-rounded-lg tw-max-w-xs tw-opacity-50">
+                      <div class="tw-bg-green-100 tw-p-2 tw-rounded-lg tw-max-w-xs tw-opacity-50">
                         <p class="tw-text-gray-700 tw-text-sm tw-italic">No, I don't have any family history of respiratory disease.</p>
                       </div>
                     </div>
@@ -414,28 +339,12 @@
       </div>
     </section>
 
-
     <!-- Results -->
     <section class="section" id="results">
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column is-full-width">
             <h2 class="title is-3">Results</h2>
-                <!-- Schematic Illustration -->
-              <section class="hero teaser">
-                <div class="container is-max-desktop">
-                  <div class="hero-body">
-                      <div class="has-text-centered">
-                        <div class="text-center" style="display: flex; justify-content: center;">
-                          <img src="static/images/cart_teaser.png" alt="CaRT Termination Behavior" class="mx-auto" style="width: 80%;"/>
-                        </div>
-                      </div>
-                    <p class="tw-text-left tw-text-sm tw-text-gray-500 tw-mt-3">
-                      <b>A schematic illustration of termination behavior with and without CaRT.</b> While LLMs typically fail to recognize the best points to stop thinking or questioning, our approach CaRT teaches them to correctly identify when they have gathered sufficient information to solve a task, avoiding wasted computation on easy problems and making steady progress on hard problems.
-                    </p>    
-                  </div>
-                </div>
-              </section>
 
             <h3 class="title is-4">Medical Diagnosis</h3>
             <div class="content has-text-justified">
