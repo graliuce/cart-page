@@ -303,7 +303,7 @@
             <h3 class="title is-4">Component 1: Hard Negative Counterfactuals</h3>
             <div class="content has-text-justified">
               <p>
-                For each trajectory where termination is optimal (success rate ≥ 50%), we create a minimally modified counterfactual where termination would be inappropriate (success rate < 30%). This isolates the exact piece of information that differentiates success from failure.
+                For each trajectory where there is an optimal termination point (success rate ≥ 50%), we create a minimally modified counterfactual where termination would be inappropriate (success rate < 30%). This isolates the exact piece of information that differentiates success from failure.
               </p>
               <div class="tw-flex tw-flex-wrap tw-justify-center tw-gap-4 tw-mt-6">
                 <!-- Original Version -->
@@ -399,7 +399,7 @@
               <div class="content has-text-justified tw-bg-blue-100 p-3 rounded-lg text-center mb-4">
                 <p><b>Example Reasoning Trace</b></p>
                 <p class="tw-text-left">&lt;think&gt; Based on the conversation so far, we have established that the patient is a 25-year-old woman experiencing chest pain, difficulty breathing, and feelings of panic. These symptoms, combined with the absence of cardiac risk factors and presence of acute anxiety, strongly suggest a panic attack rather than a cardiac event. We have sufficient information to make a confident diagnosis. &lt;/think&gt;</p>
-                <p class="tw-text-left"><b>Decision: Terminate</b></p>
+                <p class="tw-text-left"><b>Decision: Terminate, Diagnosis: Panic Attack</b></p>
               </div>
             </div>
 
