@@ -135,3 +135,20 @@ body {
 
 
 
+/* Chat gif-like reveal animation */
+.chat-step {
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 400ms ease, transform 400ms ease;
+}
+
+.chat-step.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.chat-panel {
+  /* prevent layout shift when steps appear */
+  min-height: 280px;
+}
+
